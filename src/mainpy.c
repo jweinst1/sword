@@ -17,22 +17,22 @@ static PyObject* print_message(PyObject* self, PyObject* args)
     return Py_None;
 }
 
-static PyMethodDef myMethods[] = {
+static PyMethodDef swordsMethods[] = {
     { "print_message", print_message, METH_VARARGS, "Prints a called string" },
     { NULL, NULL, 0, NULL }
 };
 
 // Our Module Definition struct
-static struct PyModuleDef myModule = {
+static struct PyModuleDef swordModule = {
     PyModuleDef_HEAD_INIT,
     "DemoPackage",
     "A demo module for python c extensions",
     -1,
-    myMethods
+    swordMethods
 };
 
 // Initializes our module using our above struct
-PyMODINIT_FUNC PyInit_DemoPackage(void)
+PyMODINIT_FUNC PyInit_sword(void)
 {
-    return PyModule_Create(&myModule);
+    return PyModule_Create(&swordModule);
 }

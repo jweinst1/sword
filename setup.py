@@ -1,7 +1,7 @@
 from distutils.core import setup, Extension
 
 
-module1 = Extension('DemoPackage',
+module1 = Extension('sword',
                     define_macros = [('USE_PRINTER', '1')],
                     include_dirs = ['include'],
                     sources = ['src/demo.c'])
