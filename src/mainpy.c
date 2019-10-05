@@ -1,4 +1,5 @@
 #include <Python.h>
+#include "sword_csv.h"
 
 #define SWORD_METHODS_END_STATIC { NULL, NULL, 0, NULL }
 
