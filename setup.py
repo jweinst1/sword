@@ -1,5 +1,15 @@
 from distutils.core import setup, Extension
 
+
+keywords_list = [
+    'data mining',
+    'data science',
+    'search',
+    'csv',
+    'data table',
+    'data analytics'
+]
+
 classifers_list = [
     'Development Status :: 2 - Pre-Alpha',
     'Operating System :: MacOS',
@@ -28,6 +38,7 @@ setup (name = 'sword',
        author_email = 'jweinst1@berkeley.edu',
        url = 'https://github.com/jweinst1/sword',
        classifiers = classifers_list,
+       keywords = keywords_list,
        long_description = open('README.md').read(),
        long_description_content_type='text/markdown',
        ext_modules = [module1])
