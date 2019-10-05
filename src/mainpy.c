@@ -2,7 +2,7 @@
 
 #define SWORD_METHODS_END_STATIC { NULL, NULL, 0, NULL }
 
-static PyObject* print_message(PyObject* self, PyObject* args)
+static PyObject* csv_row_count(PyObject* self, PyObject* args)
 {
     const char* str_arg;
     if(!PyArg_ParseTuple(args, "s", &str_arg)) {

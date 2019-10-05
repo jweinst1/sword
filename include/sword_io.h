@@ -3,6 +3,6 @@
 
 #include "compiler-info.h"
 
-void sword_io_file_size(const char* path, size_t* sz)
+void sword_io_file_size(const char* path, size_t* sz);
 
 #endif // SWORD_IO_H

@@ -1,2 +1,3 @@
 graft include
+graft buildpy
 include README.md
