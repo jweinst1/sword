@@ -30,10 +30,6 @@
 
 #include <limits.h>
 
-#if  __STDC_VERSION__ >= 199901L
-#    include <stdint.h>
-#endif
-
 #ifdef UINT_MAX
 #  if UINT_MAX == 0xffffffff
 #      define SWORD_INT_IS_32B
