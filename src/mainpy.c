@@ -1,5 +1,7 @@
 #include <Python.h>
 
+#define SWORD_METHODS_END_STATIC { NULL, NULL, 0, NULL }
+
 static PyObject* print_message(PyObject* self, PyObject* args)
 {
     const char* str_arg;
@@ -7,19 +9,13 @@ static PyObject* print_message(PyObject* self, PyObject* args)
         puts("Could not parse the python arg!");
         return NULL;
     }
-#ifdef USE_PRINTER
-    printf("printer %s\n", str_arg);
-#else
-    printf("msg %s\n", str_arg);
-#endif
-    // This can also be done with Py_RETURN_NONE
     Py_INCREF(Py_None);
     return Py_None;
 }
 
 static PyMethodDef swordsMethods[] = {
     { "print_message", print_message, METH_VARARGS, "Prints a called string" },
-    { NULL, NULL, 0, NULL }
+    SWORD_METHODS_END_STATIC
 };
 
 // Our Module Definition struct
