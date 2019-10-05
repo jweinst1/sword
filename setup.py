@@ -29,4 +29,5 @@ setup (name = 'sword',
        url = 'https://github.com/jweinst1/sword',
        classifiers = classifers_list,
        long_description = open('README.md').read(),
+       long_description_content_type='text/markdown',
        ext_modules = [module1])

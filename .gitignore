@@ -316,3 +316,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#pypi specific
+dist/
+MANIFEST
