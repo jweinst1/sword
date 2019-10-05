@@ -2,7 +2,7 @@
 # This CMake setup is only used for building the C library
 # The python extension is built using distutils from the python standard library
 #
-cmake_minimum_required(3.3)
+cmake_minimum_required(VERSION 3.3)
 
 project(sword VERSION 0.0.1)
 
@@ -44,20 +44,14 @@ else(HAVE_STDBOOL_HEADER)
    message("** stdbool.h not found")
 endif(HAVE_STDBOOL_HEADER)
 
-CHECK_TYPE_SIZE("int" CTYPE_INT)
-if(CTYPE_INT STREQUAL "0")
-   message("** sizeof int not detectable")
-else(CTYPE_INT STREQUAL "0")
-   message("~~ sizeof int is ${CTYPE_INT}")
-   add_definitions(-DSWORD_SIZEOF_INT=${CTYPE_INT})
-endif(CTYPE_INT STREQUAL "0")
-
 # Options
 option(WITH_testing "Allows tests to be run" ON)
 
 if(WITH_testing MATCHES ON)
    enable_testing()
 endif(WITH_testing MATCHES ON)
+
+add_subdirectory(src)
 
 
 

@@ -9,9 +9,10 @@ long sword_csv_count_rows(const char* data)
             if(*data == '\n') {
                 row_count++;
                 got_data = 0;
-                data++;
             }
-        } else {
+            data++;
+        } 
+        else {
             switch(*data) {
                 case '\n':
                 case ' ':

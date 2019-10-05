@@ -5,24 +5,25 @@
 static PyObject* csv_row_count(PyObject* self, PyObject* args)
 {
     const char* str_arg;
+    long counted_rows;
     if(!PyArg_ParseTuple(args, "s", &str_arg)) {
         puts("Could not parse the python arg!");
         return NULL;
     }
-    Py_INCREF(Py_None);
-    return Py_None;
+    counted_rows = sword_csv_count_rows(str_arg);
+    return PyLong_FromLong(counted_rows);
 }
 
-static PyMethodDef swordsMethods[] = {
-    { "print_message", print_message, METH_VARARGS, "Prints a called string" },
+static PyMethodDef swordMethods[] = {
+    { "csv_row_count", csv_row_count, METH_VARARGS, "Counts the rows in a CSV string." },
     SWORD_METHODS_END_STATIC
 };
 
 // Our Module Definition struct
 static struct PyModuleDef swordModule = {
     PyModuleDef_HEAD_INIT,
-    "DemoPackage",
-    "A demo module for python c extensions",
+    "sword",
+    "A fast and effecient data mining C extension.",
     -1,
     swordMethods
 };
