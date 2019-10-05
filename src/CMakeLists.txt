@@ -4,7 +4,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(SWORD_CLIB_SOURCES
     sword_io.c
-    sword_csv.c
+    sword_csv_count.c
 )
 
 add_library(swordc STATIC "${SWORD_CLIB_SOURCES}")
