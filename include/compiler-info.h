@@ -26,12 +26,6 @@
 #  else // defined(__STDC_VERSION__)
 #    define SWORD_CVERS_89
 #  endif // !defined(__STDC_VERSION__)
-#else // defined(__STDC__)
-#  ifdef _WIN32
-#     pragma message("__STDC__ is not defined, this is a non-standard C version.")
-#  else
-#     warn "__STDC__ is not defined, this is a non-standard C version."
-#  endif
 #endif
 
 #include <limits.h>
