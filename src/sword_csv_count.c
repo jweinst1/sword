@@ -1,4 +1,4 @@
-#include "sword_csv.h"
+#include "sword_csv_count.h"
 
 long sword_csv_count_rows(const char* data)
 {

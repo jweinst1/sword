@@ -1,9 +1,9 @@
 #include <Python.h>
-#include "sword_csv.h"
+#include "sword_csv_count.h"
 
 #define SWORD_METHODS_END_STATIC { NULL, NULL, 0, NULL }
 
-static PyObject* csv_row_count(PyObject* self, PyObject* args)
+static PyObject* csv_count_rows(PyObject* self, PyObject* args)
 {
     const char* str_arg;
     long counted_rows;
@@ -16,7 +16,7 @@ static PyObject* csv_row_count(PyObject* self, PyObject* args)
 }
 
 static PyMethodDef swordMethods[] = {
-    { "csv_row_count", csv_row_count, METH_VARARGS, "Counts the rows in a CSV string." },
+    { "csv_count_rows", csv_count_rows, METH_VARARGS, "Counts the rows in a CSV string." },
     SWORD_METHODS_END_STATIC
 };
 
