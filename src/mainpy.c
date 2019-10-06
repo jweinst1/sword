@@ -8,15 +8,26 @@ static PyObject* csv_count_rows(PyObject* self, PyObject* args)
     const char* str_arg;
     long counted_rows;
     if(!PyArg_ParseTuple(args, "s", &str_arg)) {
-        puts("Could not parse the python arg!");
         return NULL;
     }
     counted_rows = sword_csv_count_rows(str_arg);
     return PyLong_FromLong(counted_rows);
 }
 
+static PyObject* csv_count_cols(PyObject* self, PyObject* args)
+{
+    const char* str_arg;
+    long counted_cols;
+    if(!PyArg_ParseTuple(args, "s", &str_arg)) {
+        return NULL;
+    }
+    counted_cols = sword_csv_count_cols(str_arg);
+    return PyLong_FromLong(counted_cols);
+}
+
 static PyMethodDef swordMethods[] = {
     { "csv_count_rows", csv_count_rows, METH_VARARGS, "Counts the rows in a CSV string." },
+    { "csv_count_cols", csv_count_cols, METH_VARARGS, "Counts the columns in the first row of a CSV string."},
     SWORD_METHODS_END_STATIC
 };
 
