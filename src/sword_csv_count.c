@@ -27,3 +27,13 @@ long sword_csv_count_rows(const char* data)
     }
     return row_count;
 }
+
+long sword_csv_count_cols(const char* data)
+{
+    long col_count = 1;
+    while(*data && *data != '\n') {
+        if(*data++ == ',')
+            col_count++;
+    }
+    return col_count;
+}
