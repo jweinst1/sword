@@ -32,7 +32,7 @@ module1 = Extension('sword',
                     sources = sources_py)
 
 setup (name = 'sword',
-       version = '0.0.2',
+       version = '0.0.3',
        license= 'MIT',
        description = 'A fast, sharp, Python C extension for data mining.',
        author = 'Joshua Weinstein',
