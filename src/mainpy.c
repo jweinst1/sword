@@ -1,5 +1,6 @@
 #include <Python.h>
 #include "sword_csv_count.h"
+#include "sword_csv_read.h"
 
 #define SWORD_METHODS_END_STATIC { NULL, NULL, 0, NULL }
 
@@ -28,6 +29,7 @@ static PyObject* csv_count_cols(PyObject* self, PyObject* args)
 static PyMethodDef swordMethods[] = {
     { "csv_count_rows", csv_count_rows, METH_VARARGS, "Counts the rows in a CSV string." },
     { "csv_count_cols", csv_count_cols, METH_VARARGS, "Counts the columns in the first row of a CSV string."},
+    { "csv_read_row", sword_csv_read_row, METH_VARARGS, "Reads one row from a CSV-string. Returns a tuple containg the parsed row and the remaining CSV-string."},
     SWORD_METHODS_END_STATIC
 };
 

@@ -22,7 +22,8 @@ classifers_list = [
 
 sources_py = [
     'src/mainpy.c',
-    'src/sword_csv_count.c'
+    'src/sword_csv_count.c',
+    'src/sword_csv_read.c'
 ]
 
 module1 = Extension('sword',
